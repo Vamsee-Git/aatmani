@@ -1,11 +1,14 @@
-if [ [ $1 -gt 0 ] -a [ $2 -gt 0 ] ]
+#!/bin/bash
+a=$1
+b=$2
+if ([ a > 0 ] && [ b > 0 ])
 then
-	if [ $1 -gt $2 ]
+	if [ a -ge b ]  
 	then
-		ans=`expr $1 / $2`
+		ans=$(echo "a / b" | bc)
 		echo $ans
 	else
-		ans=`expr $1 / $2`
+		ans=$(echo "b / a" | bc)
 		echo $ans
 	fi
 else
